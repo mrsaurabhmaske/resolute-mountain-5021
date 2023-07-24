@@ -4,7 +4,7 @@ MediShine.com is a user-friendly Medicare Website that allows patients to conven
 
 
 
-****Features
+****Features****
 Patient Registration and Login: Patients can register and log in to their accounts to access personalized features and book appointments.
 
 Doctor Registration and Login: Doctors can register and log in to their accounts to manage their appointments and view patient details.
