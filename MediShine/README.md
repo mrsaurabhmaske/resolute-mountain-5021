@@ -34,16 +34,15 @@ MediShine.com is a user-friendly Medicare Website that allows patients to conven
 
 - React: Frontend library for building the user interface.
 - Node.js: Backend runtime environment for handling server-side operations.
-- Express: Backend framework to create APIs and manage routes.
-- MongoDB: NoSQL database to store patient and doctor information.
+- Routes managed using **react-router-dom**
+- JSON Server - deployed on **render.com**
 - RESTful API: To handle communication between frontend and backend.
 
 ## :rocket: Getting Started
 
 1. Clone the repository: `git clone https://github.com/mrsaurabhmaske/resolute-mountain-5021.git`
-2. Install dependencies: `cd resolute-mountain-5021 && npm install`
-3. Set up the MongoDB connection: Create a `.env` file with your MongoDB connection URI.
-4. Start the development server: `npm run start`
+2. Install dependencies: `cd MediShine && npm install`
+3. Start the development server: `npm run dev`
 
 ## :raised_hands: Contributions
 
