@@ -1,0 +1,45 @@
+.heading{
+    color:black;
+    text-align: center;
+}
+.services{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:20px;
+    max-width:1200px;
+    margin: auto;
+    padding: 50px;
+}
+.service{
+    border-radius: 20px;
+    padding:30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    transition: all 0.2s;
+    background-color:white;
+    animation: myAnim .5s;
+}
+.service h4{
+    font-size: 25px;
+}
+.service:hover{
+    transition: all 0.3s;
+    transform:scale(1.1);
+    color:white;
+    padding:25px;
+    background-color: #308CC5;
+    cursor: pointer;
+}
+
+
+@keyframes myAnim {
+    0% {
+        opacity: 1;
+        transform: rotateX(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0);
+        transform-origin: top;
+    }
+}
