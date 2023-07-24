@@ -7,7 +7,7 @@ export default function PrivateRoute({ children }) {
 
     const { isAuth } = useContext(AuthContext);
     
-    if(isAuth?.isLoggedIn){
+    if(isAuth.isLoggedIn){
         return children;
     }
 

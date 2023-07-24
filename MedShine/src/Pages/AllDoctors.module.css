@@ -6,3 +6,19 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
+.doctorr{
+   animation: myAnim .5s;
+}
+
+@keyframes myAnim {
+    0% {
+        opacity: 1;
+        transform: rotateX(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0);
+        transform-origin: top;
+    }
+}

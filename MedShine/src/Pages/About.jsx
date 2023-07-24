@@ -1,18 +1,26 @@
-import React from 'react';
-import style from './About.module.css';
+import { useDisclosure,Slide } from '@chakra-ui/react';
 import doctorbg from '../Images/doctorbg.jpg';
+import { useEffect } from 'react';
 
 const About = () => {
   const websiteCreatedBy = 'Saurabh Maske';
-  const contactEmail = 'contact@medicarewebsite.com';
   const socialMediaLinks = {
     twitter: 'https://twitter.com/your_twitter_handle',
     facebook: 'https://facebook.com/your_facebook_page',
     instagram: 'https://instagram.com/your_instagram_profile',
     linkedin: 'https://linkedin.com/in/your_linkedin_profile',
   };
+  const { isOpen, onToggle } = useDisclosure();
+
+  useEffect(() => {
+    onToggle();
+  },[])
 
   return (
+  
+    <Slide  direction='bottom' in={isOpen} style={{ zIndex: 10 }}>
+
+
     <div style={ mainStyle}>
     <div style={containerStyle}>
       <h2 style={sectionTitleStyle}>About Us</h2>
@@ -37,7 +45,7 @@ const About = () => {
         <hr/>
         
 <br />
-      <h3 style={sectionTitleStyle}>Website Credits: {websiteCreatedBy}</h3>
+          <h3 style={sectionTitleStyle}>Website Credits: <span style={ {fontSize:"30px",backgroundColor:"white",color:"rgb(34, 101, 189)",fontWeight:"bold",padding:"5px 10px",borderRadius:"20px"}}>{websiteCreatedBy}</span></h3>
         <hr/>
 
 
@@ -67,7 +75,7 @@ const About = () => {
         <br />
         <hr/>
 
-      <h3 style={sectionTitleStyle}>Project Description</h3>
+      <h3 style={sectionTitleStyle}>Description</h3>
       <p>
         MediShine.com aims to provide a user-friendly platform for individuals to
         understand Medicare and access relevant information about healthcare coverage options. The website
@@ -75,14 +83,17 @@ const About = () => {
       </p>
       </div>
       </div>
+      </Slide>
   );
 };
 const mainStyle = {
   backgroundImage: "url(" + doctorbg + ")",
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
+  backgroundColor:"red",
   height: "100%",
-  padding:"20px"
+  padding: "20px",
+  transition: "all 0.3s ease-in-out"
   }
 
 const containerStyle = {
@@ -105,5 +116,7 @@ const socialLinksStyle = {
   listStyle: 'none',
   padding: '0',
 };
+
+
 
 export default About;

@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import { useContext, useState } from 'react';
+import { Heading, Button } from '@chakra-ui/react';
+import { AuthContext } from '../AuthContext/AuthContextProvider';
+import { baseUrl } from '../api';
+
+
 
 const SignUpDoctor = () => {
+  console.log(baseUrl)
+
+  const { isDoctor,setIsDoctor } = useContext(AuthContext);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    city: '',
-    services: [],
+    address: '',
+    serviceIds: [],
   });
 
   const serviceOptions = [
@@ -34,36 +43,58 @@ const SignUpDoctor = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    if(name==="city"){
+      setFormData({ ...formData, address: {...formData.address, city: value} });
+    }
     setFormData({ ...formData, [name]: value });
   };
 
   const handleServiceChange = (event) => {
     const { options } = event.target;
     const selectedServices = [];
+
     for (let i = 0; i < options.length; i++) {
       if (options[i].selected) {
         selectedServices.push(options[i].value);
       }
     }
-    setFormData({ ...formData, services: selectedServices });
+    setFormData({ ...formData, serviceIds: selectedServices });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Here, you can add your doctors registration logic
-    console.log(formData); // You can send this data to your backend for registration
+    try {
+      let res = await fetch("https://medshine-data.onrender.com/doctors", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      console.log(res)
+
+    } catch (error) {
+      console.log("I am the Error===>",error)
+    }
+
     // Reset the form fields after submission
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      city: '',
-      services: [],
-    });
+    // setFormData({
+    //   name: '',
+    //   email: '',
+    //   phone: '',
+    //   address: '',
+    //   serviceIds: [],
+    // });
   };
 
   return (
     <div style={formStyle} >
+
+        <div style={{display:"flex",margin:"auto",maxWidth:"500px",justifyContent:"space-between",padding:"10px"}}>
+          <Heading size="lg">{isDoctor ? "Doctor Registration" : "Patient Registration"}</Heading>
+          <Button colorScheme={isDoctor?"blue":"green" } onClick={() => setIsDoctor(!isDoctor)}>{isDoctor ? "Not a Doctor?" : "I am a Doctor!"}</Button>
+        </div>
+
       <form onSubmit={handleSubmit}>
         <label style={labelStyle} htmlFor="name">
           Name:
@@ -112,7 +143,7 @@ const SignUpDoctor = () => {
           type="text"
           id="city"
           name="city"
-          value={formData.city}
+          value={formData.address.city}
           onChange={handleChange}
           required
         />
@@ -122,15 +153,15 @@ const SignUpDoctor = () => {
         </label>
         <select
           style={selectStyle}
-          id="services"
-          name="services"
+          id="serviceIds"
+          name="serviceIds"
           multiple
-          value={formData.services}
+          value={formData.serviceIds}
           onChange={handleServiceChange}
           required
         >
           {serviceOptions.map((service, index) => (
-            <option key={index} value={service}>
+            <option key={index} value={index+1}>
               {service}
             </option>
           ))}
@@ -148,9 +179,9 @@ const formStyle = {
   maxWidth: '450px',
   margin: '0 auto',
   padding: '30px',
-  borderRadius: '5px',
-  backgroundColor: "#ADD3FF",
-  boxShadow: "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
+  borderRadius: '20px',
+  backgroundImage: " linear-gradient(to top, #37ecba 0%, #72afd3 100%)",
+  color:"white"
 };
 
 const labelStyle = {
@@ -158,7 +189,7 @@ const labelStyle = {
   width: '100%',
   marginBottom: '10px',
   fontWeight: 'bolder',
-  color:"#626FA7"
+  color:"white"
 };
 
 const inputStyle = {
@@ -168,6 +199,8 @@ const inputStyle = {
   padding: '5px',
   borderRadius: '5px',
   border: '1px solid #ccc',
+  color: "black",
+  fontSize:"20px"
 };
 
 const selectStyle = {
@@ -177,6 +210,9 @@ const selectStyle = {
   padding: '5px',
   borderRadius: '5px',
   border: '1px solid #ccc',
+  color: "black",
+  backgroundColor: "lightblue",
+  fontWeight:"bolder"
 };
 
 const buttonStyle = {

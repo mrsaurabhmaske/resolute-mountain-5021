@@ -16,7 +16,7 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     transition: all 0.2s;
     background-color:white;
-    animation: myAnim .5s linear 0.5s 1 normal none;
+    animation: myAnim .5s;
 }
 .service h4{
     font-size: 25px;
@@ -33,14 +33,13 @@
 
 @keyframes myAnim {
     0% {
-        opacity: 0;
-        transform: rotateX(-70deg);
-        transform-origin: bottom;
+        opacity: 1;
+        transform: rotateX(-90deg);
     }
 
     100% {
         opacity: 1;
         transform: rotateX(0);
-        transform-origin: bottom;
+        transform-origin: top;
     }
 }

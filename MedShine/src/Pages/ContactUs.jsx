@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useToast} from "@chakra-ui/react"
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -64,6 +65,8 @@ const ContactUs = () => {
     cursor: 'pointer',
   };
 
+  const toast = useToast();
+
   return (
     <div style={formStyle}>
       <form onSubmit={handleSubmit}>
@@ -105,7 +108,15 @@ const ContactUs = () => {
           required
         ></textarea>
 
-        <button type="submit" style={buttonStyle}>
+        <button type="submit" style={buttonStyle}
+          onClick={() => toast({
+              title: 'Thank you for contacting us!',
+              description: " We'll get back to you as soon as possible",
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })
+      }>
           Submit
         </button>
       </form>

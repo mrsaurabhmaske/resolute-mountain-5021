@@ -1,6 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Heading, Button } from '@chakra-ui/react';
+import {useContext} from 'react';
+import {AuthContext} from '../AuthContext/AuthContextProvider';
+
 
 const Signup = () => {
+
+  const { isDoctor,setIsDoctor } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -9,50 +15,63 @@ const Signup = () => {
     phone: '',
     address: {
       city: '',
-      state: '',
-      country: '',
+      state: 'Maharashtra',
+      country: 'India',
     },
-    bloodType: '',
+    bloodType: 'O+ve',
   });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+    if (name === "city") {
+      setFormData({ ...formData, address: {...formData.address, city: value} });
+    }
+    else { 
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
-  const handleAddressChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      address: {
-        ...formData.address,
-        [name]: value,
-      },
-    });
-  };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Here, you can add your signup logic
-    console.log(formData); // You can send this data to your backend for user registration
+        try {
+      let res = await fetch("https://medshine-data.onrender.com/patients", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      console.log(res)
+
+    } catch (error) {
+      console.log("I am the Error===>",error)
+    }
+
     // Reset the form fields after submission
-    setFormData({
-      name: '',
-      email: '',
-      age: '',
-      gender: '',
-      phone: '',
-      address: {
-        city: '',
-        state: '',
-        country: '',
-      },
-      bloodType: '',
-    });
+    // setFormData({
+    //   name: '',
+    //   email: '',
+    //   age: '',
+    //   gender: '',
+    //   phone: '',
+    //   address: {
+    //     city: '',
+    //     state: 'Maharashtra',
+    //     country: 'India',
+    //   },
+    //   bloodType: '',
+    // });
   };
 
   return (
     <div style={formStyle}>
+
+        <div style={{display:"flex",margin:"auto",maxWidth:"500px",justifyContent:"space-between",padding:"10px"}}>
+          <Heading size="lg">{isDoctor ? "Doctor Registration" : "Patient Registration"}</Heading>
+          <Button colorScheme={isDoctor?"blue":"green" } onClick={() => setIsDoctor(!isDoctor)}>{isDoctor ? "Not a Doctor?" : "I am a Doctor!"}</Button>
+        </div>
+
       <form onSubmit={handleSubmit}>
         <label style={labelStyle} htmlFor="name">
           Name:
@@ -128,7 +147,7 @@ const Signup = () => {
           id="city"
           name="city"
           value={formData.address.city}
-          onChange={handleAddressChange}
+          onChange={handleChange}
           required
         />
 
@@ -157,9 +176,9 @@ const formStyle = {
   maxWidth: '450px',
   margin: '0 auto',
   padding: '30px',
-  borderRadius: '5px',
-  backgroundColor: "#ADD3FF",
-  boxShadow: "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset" 
+  borderRadius: '20px',
+  backgroundImage: "linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%)",
+  color:"white"
 };
 
 const labelStyle = {
@@ -167,7 +186,7 @@ const labelStyle = {
   width: '100%',
   marginBottom: '10px',
   fontWeight: 'bolder',
-  color:"#626FA7"
+  color:"white"
 };
 
 const inputStyle = {
@@ -177,6 +196,7 @@ const inputStyle = {
   padding: '5px',
   borderRadius: '5px',
   border: '1px solid #ccc',
+  color:"black"
 };
 
 const buttonStyle = {

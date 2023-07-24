@@ -5,10 +5,9 @@ import Doc2 from '../Images/doctor2.jpg';
 import Doc3 from '../Images/doctor3.jpg';
 import Doc4 from '../Images/doctor4.jpg';
 import Doc5 from '../Images/doctor5.jpg';
-import { useContext,useEffect } from 'react'
-import { AuthContext } from '../AuthContext/AuthContextProvider';
 import { useNavigate } from 'react-router-dom';
-
+import { useContext } from 'react';
+import { AuthContext } from '../AuthContext/AuthContextProvider';
 
 const features1 = [
     {
@@ -87,37 +86,8 @@ const topDoctors = [
 
 
 function Home() { 
-
+    const { isAuth,isDoctor} =  useContext(AuthContext); 
     const navigate = useNavigate();
-    const { setDoctors, setPatients, setServices } = useContext(AuthContext);
-    
-    const getDoctors = async () => {
-        try {
-            let res = await fetch("https://medshine-data.onrender.com/doctors");
-            let data = await res.json();
-            console.log(data);
-            setDoctors(data);
-        } catch (error) {
-            alert("Comething went wrong while fetching doctors data");
-        }
-    }
-
-    const getPatients = async () => {
-        try {
-            let res = await fetch("https://medshine-data.onrender.com/patients");
-            let data = await res.json();
-            console.log(data);
-            setPatients(data);
-        } catch (error) {
-            alert("Comething went wrong while fetching patients data");
-        }
-    }
-
-    useEffect(() => { 
-        getDoctors();
-        getPatients();
-    }, [])
-    
 
     return (
         <div className='home'>
@@ -125,7 +95,7 @@ function Home() {
                 <div className="homeLeft">
                     <Heading as="h1" style={{fontSize:"70px"}}>We help patients live a healthy, longer life.</Heading>
                     <p style={{fontSize:"20px",margin:"30px 20px 30px 20px"}}>We value your time so we set up all your accounts billing and costs through one payment that we take out Of the box</p>
-                    <Button m="40px" colorScheme='blue' onClick={()=> navigate("/alldoctors")}>Make Appointment</Button>
+                    <Button m="40px" colorScheme='blue' onClick={() => { (isAuth?.type === "doctor") ? navigate("/doctordashboard") : (isAuth?.type === "patient") ? navigate("/alldoctors") : navigate("/login") }}>{isAuth.type==="doctor"?"Go to Dashoard":(isAuth?.type==="patient")?"Make Appointment":(isDoctor?"Login as Doctor":"Make an Appointent")}</Button>
                 </div>
 
                 <div className='homeRight'>
