@@ -41,16 +41,17 @@ MediShine.com is a user-friendly Medicare Website that allows patients to conven
 
 Contributions to MediShine.com are welcome! If you have any ideas or improvements, feel free to submit a pull request.
 
-## Contact
+## :email: Contact
 
 For any inquiries or support, you can reach me at [saurabh.r.maske@gmail.com](mailto:saurabh.r.maske@gmail.com).
 
 ---
 
-### Deployed Link
-
-[Visit MediShine.com](https://www.medishine.com)
->>>>Will be added soon<<<<
+<p align="center">
+  <a href="https://medishine.vercel.app/" target="_blank" style="background-color: #6c63ff; color: white; font-size: 18px; padding: 10px 20px; border-radius: 6px; text-decoration: none;">
+    :globe_with_meridians: Visit MediShine.com
+  </a>
+</p>
 
 ### UI Screenshots
 ### 1. HOMEPAGE
