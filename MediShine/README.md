@@ -1,6 +1,6 @@
 <!-- Add a banner or logo image to make it more attractive -->
 <p align="center">
-  <img src="MediShine/src/Images/logox.png" alt="MediShine.com Logo">
+  <img src="src/Images/logox.png" alt="MediShine.com Logo">
 </p>
 
 # Welcome to MediShine.com - Medicare Website
