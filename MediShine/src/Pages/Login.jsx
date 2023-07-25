@@ -3,6 +3,7 @@ import { Heading,Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBo
 import { useNavigate,Navigate } from 'react-router-dom';
 import Loader from '../Components/Loader';
 import {AuthContext} from '../AuthContext/AuthContextProvider';
+import { baseUrl } from '../api';
 
 const LoginForm = () => {
   const { isAuth, setIsAuth,doctors,setDoctors,patients,setPatients } = useContext(AuthContext);
@@ -70,7 +71,7 @@ const LoginForm = () => {
   const getDoctors = async () => {
     setLoading(true);
     try {
-        let res = await fetch("https://medshine-data.onrender.com/doctors");
+        let res = await fetch(baseUrl+"/doctors");
       let data = await res.json();
       console.log("Doctors", data);
         setLoading(false);
@@ -84,7 +85,7 @@ const LoginForm = () => {
   const getPatients = async () => {
     setLoading(true);
     try {
-        let res = await fetch("https://medshine-data.onrender.com/patients");
+        let res = await fetch(baseUrl+"/patients");
       let data = await res.json();
       console.log("Patients", data);
         setLoading(false);

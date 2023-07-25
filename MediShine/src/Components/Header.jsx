@@ -22,13 +22,13 @@ export default function Header() {
                 <img src={ Logo} alt="" />
             </div>
         <Navbar />
-        {!isAuth.type && <div style={{display:"flex",alignItems:"center"}}>
+        {!isAuth.type && <div style={{display:"flex",alignItems:"center"}} className='doctorOrNot'>
         <label>{"I am a Doctor___"}  </label>
         <BubbleSwitch isDoctor={isDoctor} setIsDoctor={setIsDoctor}/>
         </div>}
 
         {isAuth.isLoggedIn ?
-          <Button ref={btnRef} colorScheme='blue' onClick={logout}>Log out</Button>
+          <Button ref={btnRef} colorScheme='blue' className="contactUs" onClick={logout}>Log out</Button>
           :
         <div className='contactSection'>
                 <Button  ref={btnRef} colorScheme='blue' onClick={onOpen} >Contact Us</Button>

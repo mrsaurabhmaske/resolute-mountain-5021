@@ -2,6 +2,9 @@ body{
   margin:0;
   padding:0;
 }
+.home h1{
+  font-size: 70px;
+}
 .mainHeader{
   display: flex;
   justify-content: space-between;
@@ -59,7 +62,6 @@ body{
   width:60%;
   padding:20px;
   animation: slideRight 1s ease 0s 1 normal forwards;
-
 }
 .homeRight{
   width:40%;
@@ -239,7 +241,7 @@ margin: 20px;
   grid-template-columns: repeat(5,1fr);
   margin: auto;
   padding: 40px;
-  gap:10px;
+  gap:20px;
   font-weight: bolder;
   margin-top: 50px;
 }
@@ -250,6 +252,166 @@ margin: 20px;
 }
 .doctorsname{
   font-size: 20px;
+}
+.AbountPageMain{
+animation: slideLeft 1s ease 0s 1 normal forwards;
+}
+.doctorOrNot {
+display: none;
+}
+
+@media only screen and (max-width: 769px) {
+  .mainHeader {
+      flex-direction: column;
+      justify-items: center;
+      gap:10px;
+    }
+  .home h1{
+    font-size: 50px;
+  }
+  h{
+    font-size: medium;
+  }
+  .sectionTwo {
+      display: grid;
+      grid-template-columns: repeat(1, 0.5fr);
+      gap: 100px;
+      justify-content: space-around;
+    }
+  .sectionOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+    padding: 40px;
+  }
+.homeLeft {
+  width: 100%;
+}
+
+.homeRight {
+  width: 100%;
+}
+.sectionThreeRight {
+  width: 100%;
+}
+.sectionThreeLeft {
+  width: 100%;
+}
+.sectionThree {
+  display: flex;
+  flex-direction: column;
+}
+.sectionFourBottom {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+.sectionFive {
+  display: flex;
+  flex-direction: column;
+}
+.sectionFiveLeft {
+  width: 100%;
+}
+.sectionFiveRight {
+  width: 100%;
+}
+.doctorsContainer{
+  grid-template-columns: repeat(2,1fr);
+}
+}
+
+@media only screen and (max-width: 426px) {
+  .navbar{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:10px;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+  }
+  .contactUs{
+    display: none;
+  }
+  .home {
+      width: 95%;
+    }
+  .home h1 {
+      font-size: 40px;
+      width:100%;
+    }
+  .sectionTwo {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap:20px;
+  }
+
+  .sectionOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+    padding: 40px;
+  }
+
+  .homeLeft {
+    width: 100%;
+    font-size: 10px;
+  }
+
+  .homeRight {
+    width: 100%;
+  }
+
+  .sectionThreeRight {
+    width: 100%;
+  }
+
+  .sectionThreeLeft {
+    width: 100%;
+  }
+
+  .sectionThree {
+    display: flex;
+    flex-direction: column;
+  }
+    .sectionFourTop {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 20px;
+      font-size: 27px;
+    }
+
+  .sectionFourBottom {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap:20px;
+  }
+
+  .sectionFive {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sectionFiveLeft {
+    width: 100%;
+  }
+
+  .sectionFiveRight {
+    width: 100%;
+  }
+
+  .doctorsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  *{
+    font-size: 15px;
+  }
+  .doctorOrNot{
+    display: none;  
+  }
+  .doctorOrNot label{
+    display: none;
+  }
 }
 
 

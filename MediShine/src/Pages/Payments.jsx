@@ -31,7 +31,7 @@ function Payments() {
         <input
           id="cc-number"
           type="text"
-          maxLenght={ 16}
+          maxLength={ 16}
           placeholder="1111 2222 3333 4444"
           required=""
         />

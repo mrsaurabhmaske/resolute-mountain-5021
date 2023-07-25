@@ -18,10 +18,10 @@ const About = () => {
 
   return (
   
-    <Slide  direction='bottom' in={isOpen} style={{ zIndex: 10 }}>
+    // <Slide  direction='bottom' in={isOpen} style={{ zIndex: 10 }}>
 
 
-    <div style={ mainStyle}>
+    <div style={ mainStyle} className='AbountPageMain'>
     <div style={containerStyle}>
       <h2 style={sectionTitleStyle}>About Us</h2>
       <p>
@@ -83,14 +83,13 @@ const About = () => {
       </p>
       </div>
       </div>
-      </Slide>
+      // </Slide>
   );
 };
 const mainStyle = {
   backgroundImage: "url(" + doctorbg + ")",
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
-  backgroundColor:"red",
   height: "100%",
   padding: "20px",
   transition: "all 0.3s ease-in-out"

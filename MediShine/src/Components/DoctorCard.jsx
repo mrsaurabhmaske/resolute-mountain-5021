@@ -3,30 +3,7 @@ import { useState ,useContext} from 'react'
 import style from "../Pages/AllDoctors.module.css"
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../AuthContext/AuthContextProvider'
-
-
-const ServicesAsPerId = {
-  "1": "General Health Checkup",
-  "2": "Allergy Management",
-  "3": "Diabetes Management",
-  "4": "Cardiology",
-  "5": "Pediatrics",
-  "6": "Gynecology",
-  "7": "Orthopedics",
-  "8": "Dermatology",
-  "9": "Mental Health Counseling",
-  "10": "Hypertension Management",
-  "11": "Obesity Counseling",
-  "12": "Acne Treatment",
-  "13": "Sports Medicine",
-  "14": "Asthma Management",
-  "15": "Gastroenterology",
-  "16": "High Cholesterol Management",
-  "17": "Insomnia Treatment",
-  "18": "Anemia Management",
-  "19": "PCOS Management",
-  "20": "Food Poisoning Treatment"
-}
+import { ServicesAsPerId } from '../api'
 
 
 function DoctorCard({ name, email, phone,serviceIds,id, address,availableSlots,fees }) {

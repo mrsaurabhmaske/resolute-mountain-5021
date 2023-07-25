@@ -2,29 +2,31 @@ import { useState } from 'react';
 import { Heading, Button } from '@chakra-ui/react';
 import {useContext} from 'react';
 import {AuthContext} from '../AuthContext/AuthContextProvider';
+import { baseUrl } from '../api';
 
 
 const Signup = () => {
 
-  const { isDoctor,setIsDoctor } = useContext(AuthContext);
+  const { isDoctor, setIsDoctor } = useContext(AuthContext);
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     age: '',
     gender: '',
     phone: '',
+    password:'',
     address: {
       city: '',
       state: 'Maharashtra',
       country: 'India',
-    },
-    bloodType: 'O+ve',
+    }
   });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     if (name === "city") {
-      setFormData({ ...formData, address: {...formData.address, city: value} });
+      setFormData({ ...formData, address: { state: "Maharashtra", country: "India", city: value} });
     }
     else { 
       setFormData({ ...formData, [name]: value });
@@ -34,8 +36,9 @@ const Signup = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(formData)
         try {
-      let res = await fetch("https://medshine-data.onrender.com/patients", {
+      let res = await fetch(baseUrl+"/patients", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
@@ -49,19 +52,20 @@ const Signup = () => {
     }
 
     // Reset the form fields after submission
-    // setFormData({
-    //   name: '',
-    //   email: '',
-    //   age: '',
-    //   gender: '',
-    //   phone: '',
-    //   address: {
-    //     city: '',
-    //     state: 'Maharashtra',
-    //     country: 'India',
-    //   },
-    //   bloodType: '',
-    // });
+    setFormData({
+      name: '',
+      password:'',
+      email: '',
+      age: '',
+      gender: '',
+      phone: '',
+      address: {
+        city: '',
+        state: 'Maharashtra',
+        country: 'India',
+      },
+      bloodType: '',
+    });
   };
 
   return (
@@ -99,6 +103,19 @@ const Signup = () => {
           required
         />
 
+        <label style={labelStyle} htmlFor="name">
+        Password :
+        </label>
+        <input
+          style={inputStyle}
+          type="password"
+          id="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+
         <label style={labelStyle} htmlFor="age">
           Age:
         </label>
@@ -115,15 +132,13 @@ const Signup = () => {
         <label style={labelStyle} htmlFor="gender">
           Gender:
         </label>
-        <input
-          style={inputStyle}
-          type="text"
-          id="gender"
-          name="gender"
-          value={formData.gender}
-          onChange={handleChange}
-          required
-        />
+
+        <select style={inputStyle} id="gender" name="gender" value={formData.gender} onChange={handleChange} required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+
 
         <label style={labelStyle} htmlFor="phone">
           Phone:
@@ -146,20 +161,7 @@ const Signup = () => {
           type="text"
           id="city"
           name="city"
-          value={formData.address.city}
-          onChange={handleChange}
-          required
-        />
-
-        <label style={labelStyle} htmlFor="bloodType">
-          Blood Type:
-        </label>
-        <input
-          style={inputStyle}
-          type="text"
-          id="bloodType"
-          name="bloodType"
-          value={formData.bloodType}
+          value={formData.address.city||""}
           onChange={handleChange}
           required
         />

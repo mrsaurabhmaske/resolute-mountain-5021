@@ -4,6 +4,7 @@ import { useNavigate} from 'react-router-dom';
 import Loader from '../Components/Loader'; 
 import { useContext,useState,useEffect } from 'react'
 import { AuthContext } from '../AuthContext/AuthContextProvider';
+import { baseUrl } from '../api';
 
 function Services() { 
 
@@ -14,7 +15,7 @@ function Services() {
     const getServices = async () => {
         setLoading(true);
         try {
-            let res = await fetch("https://medshine-data.onrender.com/services");
+            let res = await fetch(baseUrl+"/services");
             let data = await res.json();
             // console.log(data);
             setServices(data);

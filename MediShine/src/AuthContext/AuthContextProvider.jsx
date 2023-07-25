@@ -19,6 +19,8 @@ function AuthContextProvider({ children }) {
             appointmentDateTime: ""
     })
 
+    const [allAppointments,setAllAppointments] = useState([]);
+
     const [isAuth, setIsAuth] = useState({
         id:null,
         name: "",
@@ -38,7 +40,7 @@ function AuthContextProvider({ children }) {
     }
 
 
-    return <AuthContext.Provider value={{patients,setPatients,doctors,setDoctors,appointment,setAppointment,isDoctor,setIsDoctor,logout,services,setServices,isAuth,setIsAuth}}>{ children}</AuthContext.Provider>
+    return <AuthContext.Provider value={{allAppointments,setAllAppointments,patients,setPatients,doctors,setDoctors,appointment,setAppointment,isDoctor,setIsDoctor,logout,services,setServices,isAuth,setIsAuth}}>{ children}</AuthContext.Provider>
 }
 
 export default AuthContextProvider

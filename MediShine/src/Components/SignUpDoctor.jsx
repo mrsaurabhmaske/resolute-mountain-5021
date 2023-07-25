@@ -2,11 +2,11 @@ import { useContext, useState } from 'react';
 import { Heading, Button } from '@chakra-ui/react';
 import { AuthContext } from '../AuthContext/AuthContextProvider';
 import { baseUrl } from '../api';
+import { serviceOptions } from '../api';
 
 
 
 const SignUpDoctor = () => {
-  console.log(baseUrl)
 
   const { isDoctor,setIsDoctor } = useContext(AuthContext);
 
@@ -15,38 +15,19 @@ const SignUpDoctor = () => {
     email: '',
     phone: '',
     address: '',
+    password:'',
     serviceIds: [],
   });
 
-  const serviceOptions = [
-    "General Health Checkup",
-    "Allergy Management",
-    "Diabetes Management",
-    "Cardiology",
-    "Pediatrics",
-    "Gynecology",
-    "Orthopedics",
-    "Dermatology",
-    "Mental Health Counseling",
-    "Hypertension Management",
-    "Obesity Counseling",
-    "Acne Treatment",
-    "Sports Medicine",
-    "Asthma Management",
-    "Gastroenterology",
-    "High Cholesterol Management",
-    "Insomnia Treatment",
-    "Anemia Management",
-    "PCOS Management",
-    "Food Poisoning Treatment",
-  ];
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    if(name==="city"){
-      setFormData({ ...formData, address: {...formData.address, city: value} });
+    if (name === "city") {
+      setFormData({ ...formData, address: { state: "Maharashtra", country: "India", city: value } });
     }
-    setFormData({ ...formData, [name]: value });
+    else { 
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleServiceChange = (event) => {
@@ -64,27 +45,28 @@ const SignUpDoctor = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      let res = await fetch("https://medshine-data.onrender.com/doctors", {
+      let res = await fetch(baseUrl+"/doctors", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
           "Content-Type": "application/json"
         }
       });
-      console.log(res)
+      console.log(res)  
 
     } catch (error) {
-      console.log("I am the Error===>",error)
+      console.log("I am the Error======>",error)
     }
 
     // Reset the form fields after submission
-    // setFormData({
-    //   name: '',
-    //   email: '',
-    //   phone: '',
-    //   address: '',
-    //   serviceIds: [],
-    // });
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      password:'',
+      address: {},
+      serviceIds: [],
+    });
   };
 
   return (
@@ -105,6 +87,19 @@ const SignUpDoctor = () => {
           id="name"
           name="name"
           value={formData.name}
+          onChange={handleChange}
+          required
+        />
+
+        <label style={labelStyle} htmlFor="name">
+          Password:
+        </label>
+        <input
+          style={inputStyle}
+          type="password"
+          id="password"
+          name="password"
+          value={formData.password}
           onChange={handleChange}
           required
         />
@@ -143,7 +138,7 @@ const SignUpDoctor = () => {
           type="text"
           id="city"
           name="city"
-          value={formData.address.city}
+          value={formData.address.city||""}
           onChange={handleChange}
           required
         />

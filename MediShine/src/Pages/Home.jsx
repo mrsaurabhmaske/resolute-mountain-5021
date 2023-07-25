@@ -91,9 +91,10 @@ function Home() {
 
     return (
         <div className='home'>
+
             <div className='sectionOne'>
                 <div className="homeLeft">
-                    <Heading as="h1" style={{fontSize:"70px"}}>We help patients live a healthy, longer life.</Heading>
+                    <Heading as="h1" >We help patients live a healthy, longer life.</Heading>
                     <p style={{fontSize:"20px",margin:"30px 20px 30px 20px"}}>We value your time so we set up all your accounts billing and costs through one payment that we take out Of the box</p>
                     <Button m="40px" colorScheme='blue' onClick={() => { (isAuth?.type === "doctor") ? navigate("/doctordashboard") : (isAuth?.type === "patient") ? navigate("/alldoctors") : navigate("/login") }}>{isAuth.type==="doctor"?"Go to Dashoard":(isAuth?.type==="patient")?"Make Appointment":(isDoctor?"Login as Doctor":"Make an Appointent")}</Button>
                 </div>
@@ -123,7 +124,7 @@ function Home() {
                 </div>
 
                 <div className="sectionThreeRight">
-                    <Heading as="h1" style={{fontSize:"70px"}}>Affordable Health Care Solutions</Heading>
+                    <Heading as="h1">Affordable Health Care Solutions</Heading>
                     <p style={{fontSize:"20px",margin:"30px 20px 30px 20px"}}>We value your time so we set up all your accounts billing and costs through one payment that we take out Of the box</p>
                     <div className="features2">
                         <div className='feature2'>
@@ -147,7 +148,7 @@ function Home() {
             <div className='sectionFour'>
 
                 <div className='sectionFourTop'>
-                    <div><Heading style={{fontSize:"60px"}}>Other Services that We Offer</Heading></div>
+                    <div><Heading as="h1">Other Services that We Offer</Heading></div>
                     <div><p>To facilitate medical services through health care facilities, especially for people who are difficult to reach or have difficulty accessing health care facilities</p></div>
                 </div>
 
@@ -169,7 +170,7 @@ function Home() {
 
             <div className='sectionFive'>
                 <div className="sectionFiveLeft">
-                    <Heading as="h1" style={{fontSize:"70px"}}>Trust your health! Get Advice from the specialists.</Heading>
+                    <Heading as="h1">Trust your health! Get Advice from the specialists.</Heading>
                     <p style={{fontSize:"20px",margin:"30px 20px 30px 20px"}}>We value your time so we set up all your accounts billing and costs through one payment that we take out Of the box</p>
                     <Button m="20px" colorScheme='blue'>Learn More</Button>
                 </div>
@@ -180,7 +181,7 @@ function Home() {
             </div>
 
             <div className='sectionSix'>
-                <Heading as="h1" style={{fontSize:"70px"}}>Our Dedicated Doctors</Heading>
+                <Heading as="h1">Our Dedicated Doctors</Heading>
                 <div className='doctorsContainer'>
                     {topDoctors.map((d) => { 
                         return (<div key={d.id} className="doctor">
@@ -191,9 +192,8 @@ function Home() {
                     })}
                 </div>
             </div>
-            
-
-  </div>
+        
+        </div>
 )
 }
 
