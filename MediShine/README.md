@@ -1,7 +1,7 @@
 # MediShine.com - Medicare Website
 
 <div align="center">
-  <img src="MediShine/src/images/logo.png" alt="MediShine.com Logo">
+  <img src="./src/images/logo.png" alt="MediShine.com Logo">
 </div>
 
 MediShine.com is a user-friendly Medicare website that empowers patients to conveniently book appointments with doctors from various medical categories. The platform also provides doctors with a streamlined dashboard to effectively manage appointments.
