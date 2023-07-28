@@ -57,21 +57,15 @@ For any inquiries or support, you can reach me at [saurabh.r.maske@gmail.com](ma
 
 | Animated Components | ABOUT |
 |:-------------------:|:-----:|
-| ![Animated Components](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/dc6c4891-147b-4596-a3bb-0d3ae87ea94e)
-| ![ABOUT](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/85db0f67-ed6b-4b75-8755-54a004b6b1c2)
-|
+| ![Animated Components](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/dc6c4891-147b-4596-a3bb-0d3ae87ea94e) | ![ABOUT](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/85db0f67-ed6b-4b75-8755-54a004b6b1c2) |
 
 | SERVICES Page | SERVICES > DOCTORS |
 |:-------------:|:------------------:|
-| ![SERVICES Page](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/4d63ae5b-5508-46b4-9b30-2937a3f5c76e)
-| ![SERVICES > DOCTORS](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/0b36b3ae-4b10-4556-b5a8-9bb2cfdcca20)
-|
+| ![SERVICES Page](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/4d63ae5b-5508-46b4-9b30-2937a3f5c76e) | ![SERVICES > DOCTORS](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/0b36b3ae-4b10-4556-b5a8-9bb2cfdcca20) |
 
 | ALL DOCTORS | DOCTOR CARD |
 |:-----------:|:-----------:|
-| ![ALL DOCTORS](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/4a042691-4a3c-40b4-aa33-25533e68714f)
-| ![DOCTOR CARD](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/291f5b84-1a50-497b-a1c4-7f3d7b5e2cdf)
-|
+| ![ALL DOCTORS](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/4a042691-4a3c-40b4-aa33-25533e68714f) | ![DOCTOR CARD](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/291f5b84-1a50-497b-a1c4-7f3d7b5e2cdf) |
 
 | BOOKINGS PAGE | PAYMENT CARD |
 |:-------------:|:------------:|
@@ -81,13 +75,8 @@ For any inquiries or support, you can reach me at [saurabh.r.maske@gmail.com](ma
 
 | PATIENT/ USER SIGNUP | DOCTOR SIGNUP |
 |:-------------------:|:-------------:|
-| ![PATIENT/ USER SIGNUP](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/012ecbce-bb6f-4c74-a20d-fdf8ae24dbfc)
-| ![DOCTOR SIGNUP](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/8cb9e938-91dd-4c2e-8e15-2289513b4290)
-|
+| ![PATIENT/ USER SIGNUP](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/012ecbce-bb6f-4c74-a20d-fdf8ae24dbfc) | ![DOCTOR SIGNUP](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/8cb9e938-91dd-4c2e-8e15-2289513b4290) |
 
 | DOCTOR'S DASHBOARD | PATIENT'S DASHBOARD |
 |:------------------:|:------------------:|
-| ![DOCTOR'S DASHBOARD](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/313174b5-4e62-4f2e-a964-b96867d14fd7)
-| ![PATIENT'S DASHBOARD](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/7e1b5064-e539-4e2b-b264-6afb0b20e4bf)
-
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+| ![DOCTOR'S DASHBOARD](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/313174b5-4e62-4f2e-a964-b96867d14fd7) | ![PATIENT'S DASHBOARD](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/7e1b5064-e539-4e2b-b264-6afb0b20e4bf)  |
