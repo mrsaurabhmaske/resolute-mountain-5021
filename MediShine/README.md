@@ -9,7 +9,7 @@ MediShine.com is a user-friendly Medicare website that empowers patients to conv
 ### Deployed Link
 
 <div align="center">
-  <a href="https://medshine.vercel.app">Visit MediShine.com</a>
+  <a href="https://medishine.vercel.app">Visit MediShine.com</a>
 </div>
 
 ## Features
