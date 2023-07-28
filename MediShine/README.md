@@ -41,11 +41,6 @@ For any inquiries or support, you can reach me at [saurabh.r.maske@gmail.com](ma
 
 ---
 
-### Deployed Link
-
-[Visit MediShine.com](https://www.medishine.com)
->>> Will be added soon <<<
-
 ## UI Screenshots
 
 |  HOMEPAGE - Doctor Toggle OFF |  HOMEPAGE - Doctor Toggle ON |
