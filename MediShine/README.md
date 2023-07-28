@@ -69,9 +69,7 @@ For any inquiries or support, you can reach me at [saurabh.r.maske@gmail.com](ma
 
 | BOOKINGS PAGE | PAYMENT CARD |
 |:-------------:|:------------:|
-| ![BOOKINGS PAGE](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/5932061a-f0ff-46d8-9666-a2983b4c8f1f)
-| ![PAYMENT CARD](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/de091178-d6c3-4a67-8777-f39897a41784)
- |
+| ![BOOKINGS PAGE](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/5932061a-f0ff-46d8-9666-a2983b4c8f1f) | ![PAYMENT CARD](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/de091178-d6c3-4a67-8777-f39897a41784)  |
 
 | PATIENT/ USER SIGNUP | DOCTOR SIGNUP |
 |:-------------------:|:-------------:|
@@ -80,3 +78,9 @@ For any inquiries or support, you can reach me at [saurabh.r.maske@gmail.com](ma
 | DOCTOR'S DASHBOARD | PATIENT'S DASHBOARD |
 |:------------------:|:------------------:|
 | ![DOCTOR'S DASHBOARD](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/313174b5-4e62-4f2e-a964-b96867d14fd7) | ![PATIENT'S DASHBOARD](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/7e1b5064-e539-4e2b-b264-6afb0b20e4bf)  |
+
+|DOCTOR'S PROFILE | UPDATE DOCTOR PROFILE |
+|:---------------:|:---------------------:|
+| ![image](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/16121010-7c30-4f51-aa57-59a74447daa3) | ![image](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/6f29baf3-9cf9-4c1c-b587-efe38eb012f3) |
+
+:----------------------------------------------------------------------------------------------------------------------------------------------------:
