@@ -1,6 +1,8 @@
 # MediShine.com - Medicare Website
 
-![MediShine.com Logo](https://example.com/medishine_logo.png)
+<div align="center">
+  <img src="/src/images/logo.png" alt="MediShine.com Logo">
+</div>
 
 MediShine.com is a user-friendly Medicare website that empowers patients to conveniently book appointments with doctors from various medical categories. The platform also provides doctors with a streamlined dashboard to effectively manage appointments.
 
@@ -12,8 +14,8 @@ MediShine.com is a user-friendly Medicare website that empowers patients to conv
 | **Doctor Registration and Login** | Doctors can register and log in to their accounts to manage their appointments and view patient details. |
 | **Appointment Booking**           | Patients can browse through various medical categories and select preferred doctors for appointment booking. |
 | **Multiple Doctors per Category** | The platform offers multiple doctors under each medical category, providing patients with options and flexibility. |
-| **Searching and Sorting**         | Patients can use the search functionality to find doctors by name, specialty, or other criteria. Additionally, they can sort the list of doctors based on ratings, availability, or alphabetical order. |
-| **Patient Dashboard**             | Patients have access to a personalized dashboard where they can manage their appointments, view medical history, and receive updates. |
+| **Searching and Sorting**         | Patients can use the search functionality to find doctors by name, specialty, or other criteria. Additionally, they can sort the list of doctors based on fees|
+| **Patient Dashboard**             | Patients have access to a personalized dashboard where they can manage their appointments and view medical history. |
 | **Beautiful Animations**          | The user experience is enhanced with elegant and smooth animations throughout the website, creating an engaging and delightful interface. |
 
 ## Technologies Used
@@ -40,6 +42,12 @@ Contributions to MediShine.com are welcome! If you have any ideas or improvement
 For any inquiries or support, you can reach me at [saurabh.r.maske@gmail.com](mailto:saurabh.r.maske@gmail.com).
 
 ---
+
+### Deployed Link
+
+<div align="center">
+  <a href="https://medshine.vercel.app">Visit MediShine.com</a>
+</div>
 
 ## UI Screenshots
 
