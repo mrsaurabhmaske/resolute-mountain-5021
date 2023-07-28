@@ -57,7 +57,9 @@ For any inquiries or support, you can reach me at [saurabh.r.maske@gmail.com](ma
 
 | Animated Components | ABOUT |
 |:-------------------:|:-----:|
-| ![Animated Components](https://example.com/medishine/animated_components.gif) | ![ABOUT](https://example.com/medishine/about.png) |
+| ![Animated Components](![image](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/dc6c4891-147b-4596-a3bb-0d3ae87ea94e)
+) | ![ABOUT](![image](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/85db0f67-ed6b-4b75-8755-54a004b6b1c2)
+) |
 
 | SERVICES Page | SERVICES > DOCTORS |
 |:-------------:|:------------------:|
