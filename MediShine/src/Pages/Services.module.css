@@ -30,6 +30,18 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width: 769px){
+    .services{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media only screen and (max-width: 426px){
+    .services {
+            grid-template-columns: repeat(1, 1fr);
+        }
+}
+
 
 @keyframes myAnim {
     0% {

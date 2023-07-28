@@ -1,6 +1,5 @@
-import { useDisclosure,Slide } from '@chakra-ui/react';
+
 import doctorbg from '../Images/doctorbg.jpg';
-import { useEffect } from 'react';
 
 const About = () => {
   const websiteCreatedBy = 'Saurabh Maske';
@@ -10,11 +9,6 @@ const About = () => {
     instagram: 'https://instagram.com/your_instagram_profile',
     linkedin: 'https://linkedin.com/in/your_linkedin_profile',
   };
-  const { isOpen, onToggle } = useDisclosure();
-
-  useEffect(() => {
-    onToggle();
-  },[])
 
   return (
   

@@ -8,6 +8,141 @@
 }
 .doctorr{
    animation: myAnim .5s;
+    padding: 20px;
+    border-radius: 20px; 
+    display:flex;
+    box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin:10px
+}
+.doctorr img{
+    width: 25%;
+    height:250px
+}
+.addressServices{
+    width: 400px;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.addressBar{
+    padding: 10px;
+    border-radius: 10px;
+    gap: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.slotsContainer{
+    display: flex;
+    background-color: ;
+    gap:10px
+}
+.doctorSlots{
+    border-radius: 10px;
+    background-color: ;
+    display: flex;
+    gap:10px;
+    animation: slideRight 0.5s;
+}
+
+.DoctorsPerServiceContainer{
+    background-color: yellow;
+}
+
+@media only screen and (max-width: 769px) {
+    .main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .addressServices {
+        display: flex;
+        flex-direction: column
+    }
+
+    .addressBar {
+        padding: 10px;
+        border-radius: 10px;
+        gap: 5px;
+        display: flex;
+        width: 80%;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        margin-bottom: 10px;
+    }
+
+    .servicesOfDoctor {
+        display: flex;
+        background-color: ;
+    }
+
+    .doctorr {
+        width: 100%;
+        margin: 10px;
+    }
+    
+    .doctorSlots {
+        flex-direction: column;
+    }
+
+}
+
+@media only screen and (max-width: 426px) {
+    .main {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 20px 0 0 0;
+        padding: 0px;
+    }
+    .addressServices {
+        display: flex;
+        flex-direction: column
+    }
+    .addressBar {
+        padding: 10px;
+        border-radius: 10px;
+        gap: 5px;
+        display: flex;
+        width: 60%;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        margin-bottom: 10px;
+    }
+    .servicesOfDoctor {
+        display: flex;
+        background-color: ;
+    }
+
+    
+    .slotsContainer {
+        flex-direction: column;
+    }
+    .doctorr{
+        width: 80%;
+        margin: 10px;
+    }
+    .doctorr img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position:absolute;
+        right:5px;
+        border: 2px solid grey;
+    }
+    .doctorr button{
+        background-color: ;
+        max-width:50% ;
+    }
+    
+    .doctorSlots {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+
+    .doctorr img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+        right: -5px;
+        border: 2px solid grey;
+    }
 }
 
 @keyframes myAnim {
@@ -20,5 +155,17 @@
         opacity: 1;
         transform: rotateX(0);
         transform-origin: top;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

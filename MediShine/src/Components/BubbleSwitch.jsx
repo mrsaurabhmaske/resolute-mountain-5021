@@ -8,7 +8,7 @@ function BubbleSwitch() {
     const { isDoctor,setIsDoctor } = useContext(AuthContext);
 
     return (<div className={style.checkboxwrapper}>
-        <input type="checkbox" onChange={() => { setIsDoctor(!isDoctor)}}/>
+        <input type="checkbox" onChange={() => { setIsDoctor(!isDoctor) }} checked={ isDoctor} />
 </div>)
 }
 

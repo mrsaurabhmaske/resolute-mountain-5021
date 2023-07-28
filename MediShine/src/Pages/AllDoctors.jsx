@@ -45,7 +45,6 @@ function AllDoctors() {
 
     const handleSearch  = (e) => {
         setInputValue(e.target.value);
-        getDoctors(inputValue,"");
     }
 
     useEffect(() => {

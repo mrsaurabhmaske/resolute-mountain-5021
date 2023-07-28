@@ -86,7 +86,8 @@ const topDoctors = [
 
 
 function Home() { 
-    const { isAuth,isDoctor} =  useContext(AuthContext); 
+    const { isAuth, isDoctor, appointment } = useContext(AuthContext); 
+    console.log(appointment)
     const navigate = useNavigate();
 
     return (

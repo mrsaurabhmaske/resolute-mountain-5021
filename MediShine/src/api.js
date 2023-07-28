@@ -1,4 +1,5 @@
 export const baseUrl = "https://medshine-data.onrender.com";
+// export const baseUrl = "http://localhost:3000";
 
 export const ServicesAsPerId = {
   "1": "General Health Checkup",

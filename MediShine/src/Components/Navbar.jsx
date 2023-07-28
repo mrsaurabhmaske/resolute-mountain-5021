@@ -19,6 +19,8 @@ function Navbar() {
                 {!isDoctor ?<NavLink to="/alldoctors" className={({ isActive }) => (isActive ? 'activeLink' : 'inactiveLink')}>Find a doctor</NavLink>
                 :<NavLink to={"/login"} className={({ isActive }) => (isActive ? 'activeLink' : 'inactiveLink')}>Login as Doctor</NavLink>}
 
+            {isAuth?.type==="patient" && <NavLink to="/patientdashboard" className={({ isActive }) => (isActive ? 'activeLink' : 'inactiveLink')}>Dashboard</NavLink>}
+
         </div>
 
     )

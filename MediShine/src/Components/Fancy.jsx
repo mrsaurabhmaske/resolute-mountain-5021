@@ -14,7 +14,7 @@ function Fancy({ time}) {
     return (<button className={style.button + " " + style.type1} onClick={() => {
         toast({
             title: 'Booking Slot for ' + time,
-            description: "Taking you to Payments Page",
+            description: "Taking you to Payments Page...",
             status: 'success',
             duration: 9000,
             isClosable: true,
@@ -22,16 +22,6 @@ function Fancy({ time}) {
         setTimeout(() => {
             navigate("/payments")
         }, 1000);
-        setAppointment({
-            patientid: null,
-            doctorid: null,
-            service: {
-                id: null,
-                title: "",
-                description: ""
-            },
-            appointmentDateTime: ""
-    })
 
     }} ></button>) 
 }

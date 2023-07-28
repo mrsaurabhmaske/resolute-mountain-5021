@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import {  useState,useEffect } from 'react';
-import style from "./DoctorsAsPerService.module.css"
+import style from "./AllDoctors.module.css"
 import DoctorCard from '../Components/DoctorCard';
 import { Heading } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
@@ -38,15 +38,17 @@ function DoctorsAsPerService() {
     return (loading?<Loader/>:
         <div className={style.main}>
 
-            <Heading as="h2" size="md" mb={5} style={{cursor: "pointer"}}><span onClick={() => navigate("/services")}>{`Services >`}</span><span style={{ fontSize: "23px", color: "#308CC5", textDecoration: "underline" }}>{`${ServicesAsPerId[id]}`}</span></Heading>
-
+            <Heading as="h2" size="md" style={{cursor: "pointer"}}><span onClick={() => navigate("/services")}>{`Services >`}</span><span style={{ fontSize: "20px", color: "#308CC5", textDecoration: "underline" }}>{`${ServicesAsPerId[id]}`}</span></Heading>
+            <br />
+            {/* <div className={style.DoctorsPerServiceContainer}> */}
             {doctors.map((d) => {
                 if (d?.serviceIds?.includes(+id)) { 
                     return <DoctorCard key={d.id} {...d}/>
                 }
-
+                
             }
             )}
+            {/* </div> */}
         </div>
 )
 }

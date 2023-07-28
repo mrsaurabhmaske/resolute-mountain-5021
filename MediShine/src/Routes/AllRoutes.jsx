@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute"
 import Doctordashoard from "../Pages/DoctorDashboard";
 import SlotBooking from "../Pages/SlotBooking";
 import Payments from "../Pages/Payments";
+import PatientDashboard from "../Pages/PatientDashboard";
 
 function AllRoutes() { 
     return (
@@ -22,9 +23,10 @@ function AllRoutes() {
             <Route path="/signup" element={<Signup />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/doctordashboard" element={<PrivateRoute><Doctordashoard /></PrivateRoute>}></Route>
-            <Route path="/booking/:id" element={<PrivateRoute><SlotBooking/></PrivateRoute>}></Route>
+            <Route path="/booking/:id" element={<PrivateRoute><SlotBooking /></PrivateRoute>}></Route>
+            <Route path="/patientdashboard" element={<PrivateRoute><PatientDashboard /></PrivateRoute>}></Route>
             <Route path="*" element={<Navigate to="/" />}></Route>
-            <Route path="/payments" element={<Payments/> }></Route>
+            <Route path="/payments" element={<PrivateRoute><Payments/></PrivateRoute> }></Route>
         </Routes>
     )
 }

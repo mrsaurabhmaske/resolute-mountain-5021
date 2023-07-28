@@ -7,19 +7,31 @@ function AuthContextProvider({ children }) {
     const [services,setServices] = useState([]);
     const [patients, setPatients] = useState([]);
     const [isDoctor, setIsDoctor] = useState(false);
+    const [allAppointments,setAllAppointments] = useState([]);
 
     const [appointment, setAppointment] = useState({
-            patientid: null,
-            doctorid: null,
-            service: {
-                id: null,
-                title: "",
-                description: ""
-            },
-            appointmentDateTime: ""
+        "patientid": null,
+        "doctorid": null,
+        "service": {
+            "id": null,
+            "title": "",
+            "description": ""
+        },
+        "appointmentDateTime": "",
+        "doctor": {
+            "doctorid": null,
+            "name": "",
+            "email": "",
+            "phone": "",
+            "fees": null
+        },
+        "patient": {
+            "patientid": null,
+            "name": "",
+            "email": ""
+        }
     })
 
-    const [allAppointments,setAllAppointments] = useState([]);
 
     const [isAuth, setIsAuth] = useState({
         id:null,

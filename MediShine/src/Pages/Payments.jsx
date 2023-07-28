@@ -1,18 +1,65 @@
-import style from './Payments.css'
+import './Payments.css'
 import {  useNavigate } from "react-router-dom";
-import {  useToast,Heading } from '@chakra-ui/react';
+import { useToast, Heading } from '@chakra-ui/react';
+import { useState,useContext } from "react";
+import { baseUrl } from "../api";
+import { AuthContext } from '../AuthContext/AuthContextProvider';
+
 
 function Payments() { 
 
-    const toast = useToast();
-    const navigate = useNavigate();
+  const toast = useToast();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  
+  const { appointment, setAppointment } = useContext(AuthContext);
+  console.log(appointment)
+
+  const handleFinalSubmit = async () => { 
+    setLoading(true);
+    try {
+      let res = await fetch(baseUrl + "/appointments", {
+        method: "POST",
+        body: JSON.stringify(appointment),
+        headers: {
+          "Content-Type": "application/json",
+        }
+      })
+      let data = await res.json();
+      setAppointment({
+        "patientid": null,
+        "doctorid": null,
+        "service": {
+            "id": null,
+            "title": "",
+            "description": ""
+        },
+        "appointmentDateTime": "",
+        "doctor": {
+            "doctorid": null,
+            "name": "",
+            "email": "",
+            "phone": "",
+            "fees": null
+        },
+        "patient": {
+            "patientid": null,
+            "name": "",
+            "email": ""
+        }
+    });
+    } catch (error) {
+        console.log(error);
+    }
+  }
 
     return (   
 <main id="main">
     <Heading pl="5">Please Enter </Heading><Heading pl="5">Your Details</Heading>
   <section id="right">
-                <form action="#" onSubmit={(e) => {
-                    e.preventDefault();
+                <form  onSubmit={(e) => {
+            e.preventDefault();
+            handleFinalSubmit();
                     toast({
                         title: "Payment Successful",
                         description: "Have a nice day!",
@@ -102,7 +149,7 @@ function Payments() {
         <label htmlFor="sec-code">Security code:</label>
         <input type="password" maxLength={3} placeholder={123} required="" />
       </div>
-      <button type="submit">Make Payment</button>
+            <button type="submit">Make Payment</button>
     </form>
   </section>
 </main>

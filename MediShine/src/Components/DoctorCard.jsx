@@ -11,27 +11,52 @@ function DoctorCard({ name, email, phone,serviceIds,id, address,availableSlots,f
     const [slotsHidden, setSlotsHidden] = useState(true);
     const navigate = useNavigate();
 
-    const { isAuth,setAppointment,appointment} = useContext(AuthContext);
+    const { isAuth,setAppointment} = useContext(AuthContext);
+
+    const handleScheduleAppointment = (slot) =>{ 
+        setAppointment({
+        "patientid": isAuth?.id,
+        "doctorid": id,
+        "service": {
+            "id": null,
+            "title": "",
+            "description": ""
+        },
+        "appointmentDateTime": slot,
+        "doctor": {
+            "doctorid": id,
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "fees": fees
+        },
+        "patient": {
+            "patientid": isAuth.id,
+            "name": isAuth?.name,
+            "email": isAuth?.email
+        }
+    })
+    }
 
     return (
-        <div style={{ padding: "20px", borderRadius: "20px",display:"flex",boxShadow:" rgba(0, 0, 0, 0.24) 0px 3px 8px",margin:"10px"}} className={style.doctorr}>
-            <img style={{ width:"25%",height:"250px"}} src="https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=826&t=st=1689966510~exp=1689967110~hmac=18cc30256d86cb625f8d575fd1e623c003df55c67abfbec1420537e345d098a4" alt="name" />
+        <div  className={style.doctorr}>
+            <img  src="https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?w=826&t=st=1689966510~exp=1689967110~hmac=18cc30256d86cb625f8d575fd1e623c003df55c67abfbec1420537e345d098a4" alt="name" />
             <div style={{marginLeft:"20px"}}>
 
             <Heading as="h1" size="lg" mb={ 2}>{name}</Heading>
             <p size="md">📤 {email}</p>
             <p size="md">📞{phone}</p>
 
-                <div style={{ width: "400px",borderRadius:"20px", padding:"10px",display: "flex",justifyContent:"space-between"}}>
+                <div className={ style.addressServices}>
             {/* Address Container */}
-            <div style={{padding:"10px",borderRadius:"10px",gap:"20px",boxShadow:"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>
+            <div  className={ style.addressBar}>
             <Heading size="md">{address.city}</Heading>
             <p>{address.state}, { address.country}</p>
             </div>
                     {/* ===================================================================     */}
                     
                     {/* Services Contaner */}
-                <div style={{}}>
+                    <div style={{}} className={style.servicesOfDoctor}>
                     <Heading size="md">Services:</Heading>
                     <ul>
                         { serviceIds?.map((id,ind) => {
@@ -43,16 +68,19 @@ function DoctorCard({ name, email, phone,serviceIds,id, address,availableSlots,f
                     {/* ===================================================================     */}
                     
                 </div>
-                <p style={{ margin: "10px" }}>Fees: {fees}</p>
-            <Button colorScheme="blue" onClick={() => setSlotsHidden(!slotsHidden)}>Show Available Slots</Button>
-                {!slotsHidden && <div style={{ backgroundColor: "", borderRadius: "10px", margin: "10px" }}>
+
+            <p style={{ margin: "10px" }}>Fees: {fees}</p>
+            <div className={ style.slotsContainer}>
+                    
+            <Button colorScheme={slotsHidden?"blue":"red"} onClick={() => setSlotsHidden(!slotsHidden)}>{(slotsHidden)?"Show Available Slots":"Hide"}</Button>
+                {!slotsHidden && <div className={ style.doctorSlots}>
                 {availableSlots?.map((slot,ind) => {
                     return (
-                        <Button m={2} key={ind} p={2} colorScheme='green' onClick={() => { setAppointment({ ...appointment, appointmentDateTime: slot,doctorid:id,patientid:isAuth.id}); navigate(`/booking/${id}`)}}>{slot}</Button>
-                    )
-                })}
+                        <Button key={ind} colorScheme='green' onClick={() => { handleScheduleAppointment(slot,); navigate(`/booking/${id}`) }}>{slot}</Button>
+                        )
+                    })}
             </div>}
-
+        </div>
             </div>
         </div>)    
 } 

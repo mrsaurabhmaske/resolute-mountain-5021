@@ -3,7 +3,7 @@ import { AuthContext } from '../AuthContext/AuthContextProvider';
 import { useContext } from 'react';
 import Loader from '../Components/Loader';
 import { baseUrl } from '../api';
-import './Dashboard.css';
+import './DoctorDashboard.css';
 import { Heading,Button,useToast} from '@chakra-ui/react';
 
 
@@ -133,6 +133,8 @@ const DoctorDashboard = () => {
   },[])
 
   return (
+    <>{loading?<Loader/>
+    :
     <div>
       {/* Button Container*/}
       <div className="ButtonsContainer">
@@ -265,10 +267,11 @@ const DoctorDashboard = () => {
           <li key={index}>{slot}</li>
         ))}
       </ul>
-      <p><strong>Fees:</strong> ${currentDoctor.fees}</p>
+      <p><strong>Fees:</strong> <span>${currentDoctor.fees}</span></p>
     </div>}
 
       </div>
+      }</>
   );
 };
 

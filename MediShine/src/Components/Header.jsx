@@ -6,6 +6,7 @@ import ContactUs from '../Pages/ContactUs'
 import { AuthContext } from '../AuthContext/AuthContextProvider'
 import { useNavigate } from 'react-router-dom'
 import BubbleSwitch from './BubbleSwitch'
+import HamburgerNavbar from './HamburgerNavbar'
 
 
 export default function Header() { 
@@ -17,15 +18,20 @@ export default function Header() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef();
     return (
-        <div className="mainHeader">
-        <div className="logoSection" onClick={() => { navigate('/')}}>
+      <div className="mainHeader">
+        <div className="logoSection" onClick={() => { navigate('/') }}>
                 <img src={ Logo} alt="" />
-            </div>
+        </div>
+        {/* { Normal Navbar} */}
+
         <Navbar />
+
         {!isAuth.type && <div style={{display:"flex",alignItems:"center"}} className='doctorOrNot'>
         <label>{"I am a Doctor___"}  </label>
         <BubbleSwitch isDoctor={isDoctor} setIsDoctor={setIsDoctor}/>
         </div>}
+        {/* { Hamburger Navbar} */}
+        <HamburgerNavbar />
 
         {isAuth.isLoggedIn ?
           <Button ref={btnRef} colorScheme='blue' className="contactUs" onClick={logout}>Log out</Button>
@@ -43,7 +49,7 @@ export default function Header() {
           <DrawerCloseButton />
           <DrawerHeader>Leave a message</DrawerHeader>
           <DrawerBody>
-          <ContactUs/>                  
+                  <ContactUs onClose={ onClose} />                  
           </DrawerBody>
         </DrawerContent>
       </Drawer>
@@ -51,4 +57,4 @@ export default function Header() {
           }
         </div>
     )
-}
+  }
