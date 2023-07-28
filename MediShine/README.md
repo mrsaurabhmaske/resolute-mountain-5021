@@ -53,7 +53,7 @@ For any inquiries or support, you can reach me at [saurabh.r.maske@gmail.com](ma
 
 |  HOMEPAGE - Doctor Toggle OFF |  HOMEPAGE - Doctor Toggle ON |
 |:-----------------------------:|:---------------------------:|
-| https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/0858f1c1-3051-495e-9287-4f66378c1fd2 | https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/cc3fb3fc-3663-4f89-a265-650eea2897e0 |
+| [](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/0858f1c1-3051-495e-9287-4f66378c1fd2) | [](https://github.com/mrsaurabhmaske/resolute-mountain-5021/assets/123891687/cc3fb3fc-3663-4f89-a265-650eea2897e0) |
 
 | Animated Components | ABOUT |
 |:-------------------:|:-----:|
