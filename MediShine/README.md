@@ -1,10 +1,16 @@
 # MediShine.com - Medicare Website
 
 <div align="center">
-  <img src="./src/Images/logo.png" alt="MediShine.com Logo">
+  <img src="./src/Images/logox.png" alt="MediShine.com Logo">
 </div>
 
 MediShine.com is a user-friendly Medicare website that empowers patients to conveniently book appointments with doctors from various medical categories. The platform also provides doctors with a streamlined dashboard to effectively manage appointments.
+
+### Deployed Link
+
+<div align="center">
+  <a href="https://medshine.vercel.app">Visit MediShine.com</a>
+</div>
 
 ## Features
 
@@ -42,12 +48,6 @@ Contributions to MediShine.com are welcome! If you have any ideas or improvement
 For any inquiries or support, you can reach me at [saurabh.r.maske@gmail.com](mailto:saurabh.r.maske@gmail.com).
 
 ---
-
-### Deployed Link
-
-<div align="center">
-  <a href="https://medshine.vercel.app">Visit MediShine.com</a>
-</div>
 
 ## UI Screenshots
 
