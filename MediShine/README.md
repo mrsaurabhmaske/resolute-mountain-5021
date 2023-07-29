@@ -28,8 +28,8 @@ MediShine.com is a user-friendly Medicare website that empowers patients to conv
 
 - React: Frontend library for building the user interface.
 - Node.js: Backend runtime environment for handling server-side operations.
-- Express: Backend framework to create APIs and manage routes.
-- MongoDB: NoSQL database to store patient and doctor information.
+- CSS
+- ChakraUI
 - RESTful API: To handle communication between frontend and backend.
 
 ## Getting Started
